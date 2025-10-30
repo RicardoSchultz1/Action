@@ -1,0 +1,17 @@
+name: Hello GitHub Actions
+
+on: 
+  push:
+    branches:
+      - main  # ou "master", dependendo do nome da sua branch principal
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Exibir mensagem
+        run: echo "Hello, GitHub Actions!"
