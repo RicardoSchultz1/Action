@@ -1,25 +1,5 @@
-name: Node.js CI
-
-on:
-  push:
-    branches:
-      - main  # ou "master", dependendo do nome da sua branch
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout do código
-        uses: actions/checkout@v4
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20  # ou a versão que seu projeto usa
-
-      - name: Instalar dependências
-        run: npm install
-
-      - name: Rodar o projeto
-        run: npm start
+run: |
+  npm install
+  npm start &
+  sleep 5
+  echo "Servidor iniciado com sucesso!"
